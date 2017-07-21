@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js" src=""></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<script type="text/javascript" charset="utf-8" src="js/h.js"></script>
+		
+		<style>
+			.mui-bar {
+				background-color: #dc3137;
+			}
+			
+			.mui-bar h1 {
+				font-size: 22px;
+				font-family: arial;
+				color: white;
+			}
+			
+			.mui-title img {
+				margin-top: 10px;
+				width: 60px;
+				height: 25px;
+			}
+			
+			.login_img span {
+				font-size: 12px;
+				width: 25px;
+				height: 37px;
+				float: right;
+				margin-top: 12px;
+			}
+			
+			.mui-tab-item {
+				background: white;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">
+			网易
+		</h1>
+			<div class="login_img">
+				<span onclick="alert('没用的')">点击</span>
+			</div>
+		</header>
+
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" id="first">
+				<span class="mui-icon iconfont icon-xinwen "></span>
+				<span class="mui-tab-label ">新闻</span>
+			</a>
+			<a class="mui-tab-item " id="second">
+				<span class="mui-icon iconfont icon-yuedu "></span>
+				<span class="mui-tab-label ">阅读</span>
+			</a>
+			<a class="mui-tab-item " id="third">
+				<span class="mui-icon iconfont icon-x-rmvb "></span>
+				<span class="mui-tab-label ">视频</span>
+			</a>
+			<a class="mui-tab-item " id="fourth">
+				<span class="mui-icon iconfont icon-huati "></span>
+				<span class="mui-tab-label ">话题</span>
+			</a>
+			<a class="mui-tab-item " id="fivth">
+				<span class="mui-icon iconfont icon-wode "></span>
+				<span class="mui-tab-label ">我的</span>
+			</a>
+		</nav>
+		
+		<script type="text/javascript">
+			mui.init({
+
+				subpages: [{
+						url: 'xinwen.html',
+						id: 'xinwen.html',
+						styles: {
+							top: '44px',
+							bottom: '49px',
+							width: "100%"
+						}
+					},
+					{
+						url: 'yuedu.html',
+						id: 'yuedu.html',
+						styles: {
+							left: '100%',
+							top: '44px',
+							bottom: '49px',
+							width: "100%"
+						}
+					},
+					{
+						url: 'shipin.html',
+						id: 'shipin.html',
+						styles: {
+							left: '200%',
+							top: '44px',
+							bottom: '49px',
+							width: "100%"
+						}
+					},
+					{
+						url: 'huati.html',
+						id: 'huati.html',
+						styles: {
+							left: '300%',
+							top: '44px',
+							bottom: '49px',
+							width: "100%"
+						}
+					},
+					{
+						url: 'wode.html',
+						id: 'wode.html',
+						styles: {
+							left: '400%',
+							top: '44px',
+							bottom: '49px',
+							width: "100%"
+						}
+					}
+				]
+			});
+			h('#first').tap(function() {
+				
+				changSub(1);
+			});
+			h('#second').tap(function() {
+				changSub(2);
+			});
+			h('#thirdth').tap(function() {
+				changSub(3);
+			});
+			h('#fourth').tap(function() {
+				changSub(4);
+			});
+			h('#fivth').tap(function() {
+				changSub(5);
+			});
+
+			function changSub(index) {
+
+				
+				var sub1 = plus.webview.getWebviewById('xinwen.html');
+				var sub2 = plus.webview.getWebviewById('yuedu.html');
+				var sub3 = plus.webview.getWebviewById('shipin.html');
+				var sub4 = plus.webview.getWebviewById('huati.html');
+				var sub5 = plus.webview.getWebviewById('wode.html');
+				sub1.setStyle({
+					left: (index - 1) * 100 + "%"
+				});
+				sub2.setStyle({
+					left: (2 - index) * 100 + "%"
+				});
+				sub3.setStyle({
+					left: (3 - index) * 100 + "%"
+				});
+				sub4.setStyle({
+					left: (4 - index) * 100 + "%"
+				});
+				sub5.setStyle({
+					left: (5 - index) * 100 + "%"
+				});
+			}
+		</script>
+
+	</body>
+
+</html>

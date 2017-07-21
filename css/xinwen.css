@@ -1,0 +1,32 @@
+body {
+	background: lightgray;
+}
+
+.tab_title {
+	color: white;
+}
+
+.tab_title a {
+	color: black;
+	margin: 0px 0 0 8%;
+	line-height: 40px;
+}
+
+.tab_title a:hover {
+	color: #DC3137;
+}
+
+
+
+
+
+.mui-table-view-cell a img {
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+}
+
+.icon-huati {
+	margin-bottom: 3px;
+}
